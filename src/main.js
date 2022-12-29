@@ -41,7 +41,13 @@ balls.forEach((el, i, ra) => {
     );
 });
 
-const charBtn = document.querySelector('[data-class="sorceress"]');
-function charBtnClick() {
-    charBtn.classList.add("section-class-detail--open");
-}
+const charBtn = document.querySelector('.class-main__link');
+const charLayer = document.querySelector('.section-class-detail');
+
+function addClass(){
+    charLayer.classList.add('section-class-detail--open')
+};
+
+charBtn.addEventListener('click', addClass);
+
+console.log(charBtn);
