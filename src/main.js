@@ -71,17 +71,25 @@ charBtns[4].addEventListener('click', function () {
     charLayer.dataset.selectedClass = 'priest';
 })
 
-// const classSelectLink = document.querySelectorAll('.class-select__link');
-// classSelectLink.forEach(function (selectClass, index) {
-//     index = `${index + 1}`;
-//     console.log(index)
-//     selectClass.addEventListener('click', function () {
-//         if (classSelectLink[0]) {
-//             charLayer.dataset.selectedClass = 'sorceress';
-//         }
-//     })
-// console.log(classSelectLink)
-// });
+const classSelectLink = document.querySelectorAll('.class-select__link');
+classSelectLink.forEach(function (selectClass, index) {
+    index = `${index + 1}`;
+    // console.log(selectClass, index);
+    selectClass.addEventListener('click', function () {
+        if (index == 1) {
+            charLayer.dataset.selectedClass = 'sorceress';
+        } else if (index == 2) {
+            charLayer.dataset.selectedClass = 'maiden';
+        } else if (index == 3) {
+            charLayer.dataset.selectedClass = 'warrior';
+        } else if (index == 4) {
+            charLayer.dataset.selectedClass = 'rogue';
+        } else if (index == 5) {
+            charLayer.dataset.selectedClass = 'priest';
+        }
+        charLayer.dataset.selectedCharacter = 1;
+    })
+});
 
 const dataClasses = document.querySelectorAll('.character-sel__link');
 dataClasses.forEach(function (charClass, index) {
@@ -98,3 +106,5 @@ dataClasses.forEach(function (charClass, index) {
         })
     }
 });
+
+
