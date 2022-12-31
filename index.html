@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>odin</title>
     <script defer src="./src/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header></header>
     <div class="wrap-contents">
@@ -15,21 +28,435 @@
             <div class="bg-main"></div>
             <div class="bg-effect"></div>
             <div class="class__list">
-                <a href="javascript:void(0)" class="class-main__link" data-class="sorceress">
-                    <span class="icon-detail"></span>
-                    <span class="text-class">소서리스</span>
-                    <span class="text-class--char">마법사</span>
-                </a>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" id="a_sub_class_main_sorceress" class="class-main__link"
+                            data-class="sorceress">
+                            <span class="icon-detail"></span>
+                            <span class="text-class">소서리스</span>
+                            <span class="text-class--char">마법사</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" id="a_sub_class_main_shieldmaiden" class="class-main__link"
+                            data-class="maiden">
+                            <span class="icon-detail"></span>
+                            <span class="text-class">실드 메이든</span>
+                            <span class="text-class--char">여전사</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" id="a_sub_class_main_warrior" class="class-main__link"
+                            data-class="warrior">
+                            <span class="icon-detail"></span>
+                            <span class="text-class">워리어</span>
+                            <span class="text-class--char">전사</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" id="a_sub_class_main_rogue" class="class-main__link"
+                            data-class="rogue">
+                            <span class="icon-detail"></span>
+                            <span class="text-class">로그</span>
+                            <span class="text-class--char">정찰자</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" id="a_sub_class_main_priest" class="class-main__link"
+                            data-class="priest">
+                            <span class="icon-detail"></span>
+                            <span class="text-class">프리스트</span>
+                            <span class="text-class--char">사제</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="section-class-detail">
-            <div class="class-detail__visual"></div>
-            <div class="class-detail__image"></div>
-        </div>
-        <div class="tab">
-            
+            <ul class="class-detail__nav">
+                <li>
+                    <a href="javascript:void(0)" class="class-select__link" data-tab-class="sorceress"
+                        id="a_sub_class_tab_sorceress">
+                        <span class="skip">소서리스</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="class-select__link" data-tab-class="maiden"
+                        id="a_sub_class_tab_maiden">
+                        <span class="skip">실드 메이든</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="class-select__link" data-tab-class="warrior"
+                        id="a_sub_class_tab_warrior">
+                        <span class="skip">워리어</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="class-select__link" data-tab-class="rogue"
+                        id="a_sub_class_tab_rogue">
+                        <span class="skip">로그</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="class-select__link" data-tab-class="priest"
+                        id="a_sub_class_tab_priest">
+                        <span class="skip">프리스트</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="class-select__link" data-tab-class="main"
+                        id="a_sub_class_tab_return">
+                        <span class="skip">클래스 메인</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="class-detail__visual">
+                <div class="class-detail__bg"></div>
+            </div>
+            <div class="class-detail__image">
+                <div class="class-detail__char class-detail__char--sorceress">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-sorceress01.png"
+                        alt="소서리스 - 아크메이지" class="img-char--01">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-sorceress02.png"
+                        alt="소서리스 - 다크위져드" class="img-char--02">
+                </div>
+                <div class="class-detail__char class-detail__char--maiden">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-maiden01.png"
+                        alt="실드 메이든 - 발키리" class="img-char--01">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-maiden02.png"
+                        alt="실드 메이든 - 액슬러" class="img-char--02">
+                </div>
+                <div class="class-detail__char class-detail__char--warrior">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-warrior01.png"
+                        alt="워리어 - 디펜더" class="img-char--01">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-warrior02.png"
+                        alt="워리어 - 버서커" class="img-char--02">
+                </div>
+                <div class="class-detail__char class-detail__char--rogue">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-rogue01.png"
+                        alt="로그 - 스나이퍼" class="img-char--01">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-rogue02.png"
+                        alt="로그 - 어쌔신" class="img-char--02">
+                </div>
+                <div class="class-detail__char class-detail__char--priest">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-priest01.png"
+                        alt="프리스트 - 세인트" class="img-char--01">
+                    <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-char-priest02.png"
+                        alt="프리스트 - 팔라딘" class="img-char--02">
+                </div>
+            </div>
+            <div class="class-detail__panel">
+                <div class="class-detail__info class-detail__info--sorceress">
+                    <div class="class-detail__tab">
+                        <ul class="character-sel__list">
+                            <li>
+                                <a href="javascript:void(0)" class="character-sel__link">
+                                    <span class="skip">아크메이지</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="character-sel__link">
+                                    <span class="skip">다크위저드</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--01">
+                        <div class="info-title">
+                            <h3 class="skip">신? 내가 믿는 건 완벽한 지식의 결정체 마버 뿐! 소서리스1 아크 메이지</h3>
+                            <p class="skip">다양하고 강력한 마법 공격으로 메인 딜러 역할 수행 다수의 적을 효과적으로 제압할 수 있는 클래스</p>
+                            <dl class="skip">
+                                <dt>능력</dt>
+                                <dd>마법</dd>
+                                <dd>광역</dd>
+                                <dd>순간딜</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-sorceress01.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod" id="my-modal">
+                            <a href="#none" class="info-vod__link" data-videoid="PUC2tcUbOq8"
+                                id="a_sub_class_vod_archmage" data-toggle="modal" data-target="#sorceress1">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-sorceress01.png"
+                                    width="470" height="296" alt="아크메이지 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--02">
+                        <div class="info-title">
+                            <h3 class="skip">신? 내가 믿는 건 완벽한 지식의 결정체 마법 뿐! 소서리스2 다크위저드</h3>
+                            <p class="skip">소환술과 각종 군중 제어기, 디버프 스킬이 주력 대인 전투에 강점을 보이는 클래스</p>
+                            <dl class="skip">
+                                <dt>능력</dt>
+                                <dd>마법</dd>
+                                <dd>디버프</dd>
+                                <dd>제어</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-sorceress02.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="ykrU9tzEDwk"
+                                id="a_sub_class_vod_darkwizard">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-sorceress02.png"
+                                    width="470" height="296" alt="다크위저드 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-detail__info class-detail__info--maiden">
+                    <div class="class-detail__tab">
+                        <ul class="character-sel__list">
+                            <li>
+                                <a href="javascript:void(0);" class="character-sel__link">
+                                    <span class="skip">발키리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="character-sel__link">
+                                    <span class="skip">액슬러</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--01">
+                        <div class="info-title">
+                            <h3 class="skip">신이 정한 운명일지라도 내 의지를 거스를 순 없다! 실드 메이든1 발키리</h3>
+                            <p class="skip">긴 창과 방패를 이용해 적진에 뛰어 들고 아군에게는 도움을 주는 클래스</p>
+                            <dl class="skip">
+                                <dt>근거리</dt>
+                                <dd>이동</dd>
+                                <dd>보호</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-maiden01.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="fRiytjXwJ3A"
+                                id="a_sub_class_vod_valkyrie">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-maiden01.png"
+                                    width="470" height="296" alt="발키리 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--02">
+                        <div class="info-title">
+                            <h3 class="skip">신이 정한 운명일지라도 내 의지를 거스를 순 없다! 실드 메이든2 액슬러</h3>
+                            <p class="skip">강력한 디버프를 바탕으로 거대한 도끼를 활용한 원거리 공격이 가능한 클래스</p>
+                            <dl class="skip">
+                                <dt>원거리</dt>
+                                <dd>전투</dd>
+                                <dd>디버프</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-maiden02.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="eYGLzbVIXho"
+                                id="a_sub_class_vod_axler">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-maiden02.png"
+                                    width="470" height="296" alt="액슬러 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-detail__info class-detail__info--warrior">
+                    <div class="class-detail__tab">
+                        <ul class="character-sel__list">
+                            <li>
+                                <a href="javascript:void(0);" class="character-sel__link">
+                                    <span class="skip">디펜더</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="character-sel__link">
+                                    <span class="skip">버서커</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--01">
+                        <div class="info-title">
+                            <h3 class="skip">부디 내 검과 방패에 오딘의 은총이 함께 하길! 워리어1 디펜더</h3>
+                            <p class="skip">강력한 방어력과 체력을 바탕으로 선두에서 아군을 보호높은 생존력으로 안정적인 플레이가 가능한 클래스</p>
+                            <dl class="skip">
+                                <dt>능력</dt>
+                                <dd>근거리</dd>
+                                <dd>보호</dd>
+                                <dd>방어</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-warrior01.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="y2MS4Aqmtwo"
+                                id="a_sub_class_vod_defender">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-warrior01.png"
+                                    width="470" height="296" alt="디펜더 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--02">
+                        <div class="info-title">
+                            <h3 class="skip">부디 내 검과 방패에 오딘의 은총이 함께 하길! 워리어2 버서커</h3>
+                            <p class="skip">전방에서 적의 진형을 파괴하고 제어 균형 잡힌 공수 능력이특징인 클래스</p>
+                            <dl class="skip">
+                                <dt>능력</dt>
+                                <dd>근거리</dd>
+                                <dd>공격</dd>
+                                <dd>제어</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-warrior02.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="SKn56U418oo"
+                                id="a_sub_class_vod_berserker">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-warrior02.png"
+                                    width="470" height="296" alt="버서커 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-detail__info class-detail__info--rogue">
+                    <div class="class-detail__tab">
+                        <ul class="character-sel__list">
+                            <li>
+                                <a href="javascript:void(0);" class="character-sel__link">
+                                    <span class="skip">스나이퍼</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="character-sel__link">
+                                    <span class="skip">어쌔신</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--01">
+                        <div class="info-title">
+                            <h3 class="skip">내 비수에 자비란 없다! 상대가 신 일지라도! 로그1 스나이퍼</h3>
+                            <p class="skip">강력하고 안정적인 원거리 물리 공격이 주력높은 유지력의 지속딜이 가능한 클래스</p>
+                            <dl class="skip">
+                                <dt>능력</dt>
+                                <dd>단일</dd>
+                                <dd>원거리</dd>
+                                <dd>유지력</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-rogue01.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="0k6iNxv-eZQ"
+                                id="a_sub_class_vod_sniper">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-rogue01.png"
+                                    width="470" height="296" alt="스나이퍼 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--02">
+                        <div class="info-title">
+                            <h3 class="skip">내 비수에 자비란 없다! 상대가 신 일지라도! 로그2 어쌔신</h3>
+                            <p class="skip">가장 강력한 물리 공격을 바탕으로 메인딜러 역할 수행대인 전투에 특화된 클래스</p>
+                            <dl class="skip">
+                                <dt>능력</dt>
+                                <dd>단일</dd>
+                                <dd>근거리</dd>
+                                <dd>공격</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-rogue02.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="lw-1IoIai68"
+                                id="a_sub_class_vod_assassin">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-rogue02.png"
+                                    width="470" height="296" alt="어쌔신 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-detail__info class-detail__info--priest">
+                    <div class="class-detail__tab">
+                        <ul class="character-sel__list">
+                            <li>
+                                <a href="javascript:void(0);" class="character-sel__link">
+                                    <span class="skip">세인트</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="character-sel__link">
+                                    <span class="skip">팔라딘</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--01">
+                        <div class="info-title">
+                            <h3 class="skip">신께서 우리를 지켜 주실 거에요! 프리스트1 세인트</h3>
+                            <p class="skip">각종 치유 스킬과 버프형 스킬이 주력 후방에서 아군과 자신의 생존력을 극대화시키는 정통 힐러</p>
+                            <dl class="skip">
+                                <dt>능력</dt>
+                                <dd>버프</dd>
+                                <dd>치유</dd>
+                                <dd>부활</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-priest01.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="k_sX45fq5fM"
+                                id="a_sub_class_vod_saint">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-priest01.png"
+                                    width="470" height="296" alt="세인트 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="class-detail__cont class-detail__cont--02">
+                        <div class="info-title">
+                            <h3 class="skip">신께서 우리를 지켜 주실 거에요! 프리스트2 팔라딘</h3>
+                            <p class="skip">각종 버프 스킬로 아군의 전투력을 극대화 세미 탱커와 보조 힐러 역할 수행이 가능한 클래스</p>
+                            <dl class="skip">
+                                <dt>능력</dt>
+                                <dd>버프</dd>
+                                <dd>보호</dd>
+                            </dl>
+                            <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-info-priest02.png"
+                                alt="">
+                        </div>
+                        <div class="info-vod">
+                            <a href="#none" class="info-vod__link" data-videoid="8DHBtYPDKoU"
+                                id="a_sub_class_vod_paladin">
+                                <img src="https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-priest02.png"
+                                    width="470" height="296" alt="팔라딘 전투 영상">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer></footer>
+    <div class="sorceress"></div>
+    <div class="sorceress2"></div>
+    <div class="sorceress3"></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sorceress1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <iframe id="player" type="text/html" width="640" height="360"
+                        src="http://www.youtube.com/embed/PUC2tcUbOq8" frameborder="0"></iframe>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

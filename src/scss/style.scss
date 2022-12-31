@@ -1,6 +1,9 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
 $primary-color: #f2edb5;
 
+body{
+    background-color: #18181a;
+}
 .skip {
     display: block;
     overflow: hidden;
@@ -170,29 +173,153 @@ $primary-color: #f2edb5;
             opacity: 0;
             transform: translateY(-10px);
         }
-        &[data-class="sorceress"] {
-            margin: -192px 0 0 -561px;
+        &[data-class] {
             &::after, .text-class, .text-class--char {
                 left: 68px;
             }
         }
+        &[data-class="sorceress"] {
+            margin: -192px 0 0 -561px;
+        }
+        &[data-class="maiden"] {
+            margin: -94px 0 0 -363px;
+        }
+        &[data-class="warrior"] {
+            margin: -263px 0 0 172px;
+        }
+        &[data-class="rogue"] {
+            margin: -186px 0 0 314px;
+        }
+        &[data-class="priest"] {
+            margin: -117px 0 0 543px;
+        }
     }
 }
 .section-class-detail {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 1080px;
     background-color: #000;
     opacity: 0;
-    transition: opacity .5s,transform .1s .5s;
+    transition: opacity .5s, transform .1s .5s;
     transform: scale(1.2);
-    &.section-class-detail--open{
-        position: absolute;
+    z-index: -1;
+    &.section-class-detail--open {
         opacity: 1;
         transition: .5s;
         transform: scale(1);
         z-index: 1;
+    }
+    $character: sorceress, maiden, warrior, rogue, priest;
+
+    @each $character in $character {
+        //   .#{$character} {
+
+        //   }
+        &[data-selected-class=#{$character}] {
+            .class-detail__visual .class-detail__bg {
+                margin-left: -1280px;
+            }
+            .class-detail__image .class-detail__char--#{$character} {
+                opacity: 1;
+                z-index: 10;
+            }
+            .class-detail__panel .class-detail__info--#{$character} {
+                opacity: 1;
+                z-index: 10;
+                .character-sel__list {
+                    background: {
+                        image: url(https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/tab-#{$character}.png);
+                        repeat: no-repeat;
+                    }
+                }
+            }
+            .class-select__link[data-tab-class=#{$character}]>span {
+                opacity: 1;
+            }
+            &[data-selected-character="1"] {
+                .class-detail__char--#{$character} .img-char--01 {
+                    transform: translateX(0);
+                    opacity: 1;
+                    z-index: 10;
+                }
+                .class-detail__panel .class-detail__info--#{$character} .class-detail__cont--01 {
+                    opacity: 1;
+                    z-index: 10;
+                }
+            }
+            &[data-selected-character="2"] {
+                .class-detail__char--#{$character} .img-char--02 {
+                    transform: translateX(0);
+                    opacity: 1;
+                    z-index: 10;
+                }
+                .class-detail__panel .class-detail__info--#{$character} .class-detail__cont--02 {
+                    opacity: 1;
+                    z-index: 10;
+                }
+                .character-sel__list {
+                    background-position-y: 100%;
+                }
+            }
+        }
+    }
+    .class-detail__nav {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 88px;
+        height: 444px;
+        margin: -383px 0 0 532px;
+        z-index: 20;
+        &>li {
+            margin-bottom: 1px;
+        }
+        .class-select__link,
+        .class-select__link>span {
+            display: block;
+            background: {
+                image: url(https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/nav-class-220919.png);
+                repeat: no-repeat;
+            }
+        }
+        .class-select__link {
+            width: 88px;
+            height: 88px;
+            &[data-tab-class=sorceress],
+            &[data-tab-class=sorceress]>span {
+                background-position-y: 0;
+            }
+            &[data-tab-class=maiden],
+            &[data-tab-class=maiden]>span {
+                background-position-y: -89px;
+            }
+            &[data-tab-class=worrior],
+            &[data-tab-class=worrior]>span {
+                background-position-y: -178px;
+            }
+            &[data-tab-class=rogue],
+            &[data-tab-class=rogue]>span {
+                background-position-y: -267px;
+            }
+            &[data-tab-class=priest],
+            &[data-tab-class=priest]>span {
+                background-position-y: -356px;
+            }
+            &[data-tab-class=main],
+            &[data-tab-class=main]>span {
+                background-position-y: -445px;
+            }
+        }
+        .class-select__link>span {
+            width: 100%;
+            height: 100%;
+            background-position-x: 100%;
+            opacity: 0;
+            transition: opacity .4s;
+        }
     }
     .class-detail__visual {
         overflow: hidden;
@@ -201,5 +328,107 @@ $primary-color: #f2edb5;
         left: 0;
         width: 100%;
         height: 100%;
+        .class-detail__bg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 3030px;
+            height: 1080px;
+            margin-left: -1280px;
+            background: {
+                image: url(https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/bg-detail-220919.jpg);
+                position: 0 0;
+                repeat: no-repeat;
+            }
+            opacity: 1;
+            transition: margin .5s;
+        }
+    }
+    .class-detail__image {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 1005px;
+        height: 1080px;
+        margin-left: -385px;
+        .class-detail__char {
+            position: relative;
+            img {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1005px;
+                height: 1080px;
+                opacity: 0;
+                transform: translateX(-100px);
+                transition: .5s;
+            }
+        }
+    }
+    .class-detail__panel {
+        position: absolute;
+        top: 96px;
+        left: 50%;
+        width: 474px;
+        margin-left: -620px;
+        .class-detail__info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: .5s;
+        }
+        .class-detail__tab {
+            overflow: hidden;
+            width: 470px;
+            .character-sel__list {
+                display: flex;
+                li {
+                    width: 50%;
+                    height: 43px;
+                    .character-sel__link {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .class-detail__cont {
+            position: absolute;
+            top: 85px;
+            left: 0;
+            opacity: 0;
+            transition: opacity .6s;
+            img {
+                display: block;
+            }
+            .info-title {
+                margin-bottom: 37px;
+            }
+            .info-vod__link {
+                position: relative;
+                display: block;
+                &:hover::after {
+                    opacity: 1;
+                }
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 470px;
+                    height: 296px;
+                    background: {
+                        image: url(https://t1.kakaocdn.net/gamepub/ui-contents/service/odin/home/pc/v1/images/game/class/img-vod-over.png);
+                        repeat: no-repeat;
+                    }
+                    transition: opacity .4s;
+                    opacity: 0;
+                    content: '';
+                }
+            }
+        }
     }
 }

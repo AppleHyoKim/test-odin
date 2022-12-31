@@ -41,13 +41,60 @@ balls.forEach((el, i, ra) => {
     );
 });
 
-const charBtn = document.querySelector('.class-main__link');
+const charBtns = document.querySelectorAll('.class-main__link');
 const charLayer = document.querySelector('.section-class-detail');
+const classTabReturn = document.querySelector('#a_sub_class_tab_return');
 
-function addClass(){
-    charLayer.classList.add('section-class-detail--open')
-};
+charBtns.forEach(function (charBtn) {
+    charBtn.addEventListener('click', function () {
+        charLayer.classList.add('section-class-detail--open')
+        charLayer.dataset.selectedCharacter = 1;
+    })
+});
+classTabReturn.addEventListener('click', function () {
+    charLayer.classList.remove('section-class-detail--open')
+});
 
-charBtn.addEventListener('click', addClass);
+charBtns[0].addEventListener('click', function () {
+    charLayer.dataset.selectedClass = 'sorceress';
+})
+charBtns[1].addEventListener('click', function () {
+    charLayer.dataset.selectedClass = 'maiden';
+})
+charBtns[2].addEventListener('click', function () {
+    charLayer.dataset.selectedClass = 'warrior';
+})
+charBtns[3].addEventListener('click', function () {
+    charLayer.dataset.selectedClass = 'rogue';
+})
+charBtns[4].addEventListener('click', function () {
+    charLayer.dataset.selectedClass = 'priest';
+})
 
-console.log(charBtn);
+// const classSelectLink = document.querySelectorAll('.class-select__link');
+// classSelectLink.forEach(function (selectClass, index) {
+//     index = `${index + 1}`;
+//     console.log(index)
+//     selectClass.addEventListener('click', function () {
+//         if (classSelectLink[0]) {
+//             charLayer.dataset.selectedClass = 'sorceress';
+//         }
+//     })
+// console.log(classSelectLink)
+// });
+
+const dataClasses = document.querySelectorAll('.character-sel__link');
+dataClasses.forEach(function (charClass, index) {
+    index = `${index + 1}`;
+    if (index % 2 === 0) {
+        charClass.dataset.classIndex = 2;
+        charClass.addEventListener('click', function () {
+            charLayer.dataset.selectedCharacter = 2;
+        })
+    } else {
+        charClass.dataset.classIndex = 1
+        charClass.addEventListener('click', function () {
+            charLayer.dataset.selectedCharacter = 1;
+        })
+    }
+});
