@@ -107,4 +107,3 @@ dataClasses.forEach(function (charClass, index) {
     }
 });
 
-

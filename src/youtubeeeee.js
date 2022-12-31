@@ -1,6 +1,13 @@
-var tag = document.createElement('script');
+var frames = document.getElementsByTagName('iframe');
+for (var i=0; i < frames.length; i++)
+{
+  frames[i].src = frames[i].src.replace(/www.youtube.com/gi,'www.youtube-nocookie.com');
+}
 
-tag.src = "https://www.youtube.com/iframe_api";
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+// tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
