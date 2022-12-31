@@ -1,47 +1,118 @@
-// 2. 이 코드는 Iframe Player API를 비동기적으로 로드한다. !!필수!!
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// 3. API 코드를 다운로드 받은 다음에 <iframe>을 생성하는 기능 (youtube player도 더불어)
 function onYouTubeIframeAPIReady() {
-    new YT.Player('player', {
-        height: '360',  //변경가능-영상 높이
-        width: '640',  //변경가능-영상 너비
-        videoId: 'M7lc1UVf-VE',  //변경-영상ID
+    new YT.Player('player-sorceress1', {
+        videoId: 'PUC2tcUbOq8',
         playerVars: {
-            'rel': 0,    //연관동영상 표시여부(0:표시안함)
-            'controls': 0,    //플레이어 컨트롤러 표시여부(0:표시안함)
-            'autoplay': 1,   //자동재생 여부(1:자동재생 함, mute와 함께 설정)
-            'mute': 1,   //음소거여부(1:음소거 함)
-            'loop': 1,    //반복재생여부(1:반복재생 함)
-            'playsinline': 1,    //iOS환경에서 전체화면으로 재생하지 않게
-            'playlist': 'M7lc1UVf-VE'   //재생할 영상 리스트
-        },
-        events: {
-            'onReady': onPlayerReady, //onReady 상태일 때 작동하는 function이름
-            'onStateChange': onPlayerStateChange //onStateChange 상태일 때 작동하는 function이름
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
         }
     });
-}
-
-// 4. API는 비디오 플레이어가 준비되면 아래의 function을 불러올 것이다.
-function onPlayerReady(event) {
-    event.target.playVideo();
-}
-
-// 5. API는 플레이어의 상태가 변화될 때 아래의 function을 불러올 것이다.
-//    이 function은 비디오가 재생되고 있을 때를 가르킨다.(state=1),
-//    플레이어는 6초 이상 재생되고 정지되어야 한다.
-var done = false;
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 6000);
-        done = true;
-    }
-}
-function stopVideo() {
-    player.stopVideo();
+    new YT.Player('player-sorceress2', {
+        videoId: 'ykrU9tzEDwk',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
+    new YT.Player('player-maiden1', {
+        videoId: 'fRiytjXwJ3A',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
+    new YT.Player('player-maiden2', {
+        videoId: 'eYGLzbVIXho',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
+    new YT.Player('player-warrior1', {
+        videoId: 'y2MS4Aqmtwo',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
+    new YT.Player('player-warrior2', {
+        videoId: 'SKn56U418oo',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
+    new YT.Player('player-rogue1', {
+        videoId: '0k6iNxv-eZQ',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
+    new YT.Player('player-rogue2', {
+        videoId: 'lw-1IoIai68',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
+    new YT.Player('player-priest1', {
+        videoId: 'k_sX45fq5fM',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
+    new YT.Player('player-priest2', {
+        videoId: '8DHBtYPDKoU',
+        playerVars: {
+            'rel': 0,
+            'controls': 0,
+            'autoplay': 1,
+            'mute': 1,
+            'loop': 0,
+            'playsinline': 1,
+        }
+    });
 }
